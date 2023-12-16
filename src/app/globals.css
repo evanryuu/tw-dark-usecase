@@ -7,11 +7,9 @@
   --theme-color-invert: black;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
     --theme-color: black;
     --theme-color-invert: white;
-}
 }
 
 .main {
