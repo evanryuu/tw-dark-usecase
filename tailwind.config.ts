@@ -8,9 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
+      textColor: {
+        'theme': 'var(--theme-color-invert)'
+      },
+      backgroundColor: {
         'theme': 'var(--theme-color)',
-        'theme-invert': 'var(--theme-color-invert)'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
