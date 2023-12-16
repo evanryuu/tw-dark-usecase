@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="main bg-white dark:bg-black text-black dark:text-white">
+    <main className="main bg-theme text-theme">
       <button className="btn">Toggle</button>
     </main>
   )
