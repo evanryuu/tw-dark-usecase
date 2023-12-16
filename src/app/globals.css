@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main {
+  @apply h-[100vh] flex items-center justify-center text-4xl font-bold
+}
+
+.btn {
+  @apply border-[1px] transition-all rounded-md p-4 border-transparent border-solid
+}
+
