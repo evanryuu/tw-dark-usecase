@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-theme {
-  @apply bg-white dark:bg-black;
+:root {
+  --theme-color: white;
+  --theme-color-invert: black;
 }
 
-.text-theme {
-  @apply text-black dark:text-white;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-color: black;
+    --theme-color-invert: white;
+}
 }
 
 .main {
