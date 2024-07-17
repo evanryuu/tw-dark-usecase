@@ -8,15 +8,18 @@
 }
 
 .dark {
-    --theme-color: black;
-    --theme-color-invert: white;
+  --theme-color: black;
+  --theme-color-invert: white;
+}
+
+.teal {
+  --theme-color: teal;
 }
 
 .main {
-  @apply h-[100vh] flex items-center justify-center text-4xl font-bold
+  @apply h-[100vh] flex items-center justify-center text-4xl font-bold;
 }
 
 .btn {
-  @apply border-[1px] transition-all rounded-md p-4 border-transparent border-solid
+  @apply border-[1px] transition-all rounded-md p-4 border-transparent border-solid;
 }
-
