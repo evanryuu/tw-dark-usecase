@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --theme-color: white;
-  --theme-color-invert: black;
+  --theme-color: #333;
+  --theme-color-info: #999;
 }
 
 .dark {
@@ -12,12 +12,8 @@
   --theme-color-invert: white;
 }
 
-.teal {
-  --theme-color: teal;
-}
-
 .main {
-  @apply h-[100vh] flex items-center justify-center text-4xl font-bold;
+  @apply h-[100vh] flex flex-col items-center justify-center text-4xl font-bold;
 }
 
 .btn {

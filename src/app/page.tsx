@@ -1,12 +1,28 @@
 'use client'
 
-import useDark from "@/hooks/useDark"
+import { ConfigProvider } from '@/providers/ConfigProvider'
 
 export default function Home() {
-  const { toggleDark } = useDark()
   return (
-    <main className="main bg-theme text-theme">
-      <button className="btn" onClick={toggleDark}>Toggle</button>
-    </main>
+    <ConfigProvider
+      theme={{
+        tokens: {
+          '--theme-color': '#60bc',
+        },
+      }}
+    >
+      <main className="main bg-theme text-theme">
+        <div className="text-theme">This is certain text.</div>
+        <ConfigProvider
+          theme={{
+            tokens: {
+              '--theme-color': 'teal',
+            },
+          }}
+        >
+          <div className="text-theme">inside text</div>
+        </ConfigProvider>
+      </main>
+    </ConfigProvider>
   )
 }
