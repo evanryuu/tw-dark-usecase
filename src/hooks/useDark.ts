@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react"
-import { isBrowser } from "../utils/isBrowser"
+import { useEffect, useState } from 'react'
+import { isBrowser } from '../utils/isBrowser'
+import { useCookieState } from 'ahooks'
 
 function getSystemDark() {
   if (isBrowser) {
@@ -9,13 +10,16 @@ function getSystemDark() {
   return false
 }
 export default function useDark() {
-  const [dark, setDark] = useState(getSystemDark())
-  const toggleDark = () => setDark(!dark)
+  const [theme, setTheme] = useCookieState('theme-color', {
+    defaultValue: getSystemDark() ? 'dark' : 'light',
+  })
+  const dark = theme === 'dark'
+  const toggleDark = () => setTheme(theme === 'dark' ? 'light' : 'dark')
 
   useEffect(() => {
     const qm = window.matchMedia('(prefers-color-scheme: dark)')
-    const changeDark = () => setDark(qm.matches)
-
+    const changeDark = () => setTheme(qm.matches ? 'dark' : 'light')
+    setTheme(dark ? 'dark' : 'light')
     qm.addEventListener('change', changeDark) // track system preferences
     return () => qm.removeEventListener('change', changeDark)
   }, [])
